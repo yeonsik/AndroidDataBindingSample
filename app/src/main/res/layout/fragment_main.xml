@@ -1,6 +1,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
-        <variable name="main_fragment" type="com.yeonsik.databindingsample.databindingsample.fragments.MainFragment"/>
+        <variable name="fragment" type="com.yeonsik.databindingsample.databindingsample.fragments.MainFragment"/>
     </data>
     <ScrollView
         android:layout_height="match_parent"
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:text="@string/btn_sample_view_binding_bk_activity"
-            android:onClick="@{main_fragment::sampleViewBindingButterKnifeActivity}"
+            android:onClick="@{fragment::sampleViewBindingButterKnifeActivity}"
             />
 
         <Button
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:text="@string/btn_sample_view_binding_activity"
-            android:onClick="@{main_fragment.sampleViewBindingActivity}"
+            android:onClick="@{fragment::sampleViewBindingActivity}"
             />
 
         <Button
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:text="@string/btn_sample_view_binding_bk"
-            android:onClick="@{main_fragment.sampleViewBindingButterKnife}"
+            android:onClick="@{fragment::sampleViewBindingButterKnife}"
             />
 
         <Button
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:text="@string/btn_sample_view_binding"
-            android:onClick="@{main_fragment.sampleViewBinding}"
+            android:onClick="@{fragment::sampleViewBinding}"
             />
 
         <Button
@@ -55,7 +55,15 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:text="@string/btn_sample_data_binding"
-            android:onClick="@{main_fragment.sampleDataBinding}"
+            android:onClick="@{fragment::sampleDataBinding}"
+            />
+
+        <Button
+            android:id="@+id/btn_sample_listener_binding"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/btn_sample_listener_binding"
+            android:onClick="@{fragment::sampleListenerBinding}"
             />
 
     </LinearLayout>

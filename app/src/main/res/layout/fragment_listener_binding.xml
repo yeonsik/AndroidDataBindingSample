@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="user" type="com.yeonsik.databindingsample.databindingsample.datas.User"/>
+        <variable name="fragment" type="com.yeonsik.databindingsample.databindingsample.fragments.ListenerBindingFragment"/>
+    </data>
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MethodReferences"
+            android:onClick="@{fragment::methodReferencesOnClick}"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ListenerBinding"
+            android:onClick="@{(view) -> fragment.listenerBindings(view, user)}"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onCheckedChanged="@{(cb, isChecked) -> fragment.completeChanged(cb, isChecked, user)}"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LongClick"
+            android:onLongClick="@{(view) -> fragment.onLongClick(view, user)}"/>
+    </LinearLayout>
+</layout>

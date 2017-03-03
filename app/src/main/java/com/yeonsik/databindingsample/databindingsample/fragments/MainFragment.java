@@ -29,7 +29,7 @@ public class MainFragment extends BaseFragment {
         View layout = inflater.inflate(R.layout.fragment_main, container, false);
 
         mBinding = FragmentMainBinding.bind(layout);
-        mBinding.setMainFragment(this);
+        mBinding.setFragment(this);
 
         return layout;
     }
@@ -58,6 +58,10 @@ public class MainFragment extends BaseFragment {
 
     public void sampleDataBinding(View view) {
         clickedOn(new DataBindingFragment());
+    }
+
+    public void sampleListenerBinding(View view) {
+        clickedOn(new ListenerBindingFragment());
     }
 
     private void clickedOn(@NonNull Fragment fragment) {
