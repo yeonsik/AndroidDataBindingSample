@@ -7,15 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.yeonsik.databindingsample.databindingsample.R;
-import com.yeonsik.databindingsample.databindingsample.databinding.FragmentViewBindingBinding;
+import com.yeonsik.databindingsample.databindingsample.databinding.FragmentDataBindingBinding;
+import com.yeonsik.databindingsample.databindingsample.datas.User;
 
 /**
- * Created by yeonsik on 2017-03-03.
+ * Created by yeonsik on 2017-03-04.
  */
 
-public class ViewBindingFragment extends BaseFragment {
+public class DataBindingFragment extends BaseFragment {
 
-    FragmentViewBindingBinding mBinding;
+    FragmentDataBindingBinding mBinding;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -26,13 +27,15 @@ public class ViewBindingFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.fragment_view_binding, container, false);
+        View layout = inflater.inflate(R.layout.fragment_data_binding, container, false);
 
-        mBinding = FragmentViewBindingBinding.bind(layout);
+        mBinding = FragmentDataBindingBinding.bind(layout);
 
-        mBinding.titleTextview.setText("title");
-        mBinding.descriptionTextview.setText("description");
-        mBinding.footerTextview.setText("footer");
+        User user = new User("Gildong", "Hong");
+        mBinding.setUser(user);
+
+        user.setFirstName("Yeonsik");
+        user.setLastName("Yoon");
 
         return layout;
     }

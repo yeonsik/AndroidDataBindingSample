@@ -59,6 +59,11 @@ public class MainFragment extends BaseFragment {
         clickedOn(new ViewBindingFragment());
     }
 
+    @OnClick(R.id.btn_sample_data_binding)
+    void sampleDataBinding() {
+        clickedOn(new DataBindingFragment());
+    }
+
     private void clickedOn(@NonNull Fragment fragment) {
         final String tag = fragment.getClass().toString();
         getActivity().getSupportFragmentManager()

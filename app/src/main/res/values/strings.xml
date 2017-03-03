@@ -4,4 +4,5 @@
     <string name="btn_sample_view_binding_activity">View Binding Activity</string>
     <string name="btn_sample_view_binding_bk">View Binding(ButterKnife)</string>
     <string name="btn_sample_view_binding">View Binding</string>
+    <string name="btn_sample_data_binding">Data Binding</string>
 </resources>
