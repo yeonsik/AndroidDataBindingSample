@@ -12,9 +12,7 @@ import android.view.ViewGroup;
 import com.yeonsik.databindingsample.databindingsample.R;
 import com.yeonsik.databindingsample.databindingsample.activities.ViewBindingActivity;
 import com.yeonsik.databindingsample.databindingsample.activities.ViewBindingBKActivity;
-
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+import com.yeonsik.databindingsample.databindingsample.databinding.FragmentMainBinding;
 
 /**
  * Created by yeonsik on 2017-03-03.
@@ -22,45 +20,43 @@ import butterknife.OnClick;
 
 public class MainFragment extends BaseFragment {
 
+    private FragmentMainBinding mBinding;
+
     @Override
     public View onCreateView(LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.fragment_main, container, false);
-        ButterKnife.bind(this, layout);
+
+        mBinding = FragmentMainBinding.bind(layout);
+        mBinding.setMainFragment(this);
+
         return layout;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
-
-    @OnClick(R.id.btn_sample_view_binding_bk_activity)
-    void sampleViewBindingButterKnifeActivity() {
+    /**
+     * onClick Listener Binding을 위해서는 반드시 public 으로 설정하고 매개변수로 View를 넘겨줘야 한다.
+     * @param view
+     */
+    public void sampleViewBindingButterKnifeActivity(View view) {
         Intent intent = new Intent(getActivity().getApplicationContext(), ViewBindingBKActivity.class);
         startActivity(intent);
     }
 
-    @OnClick(R.id.btn_sample_view_binding_activity)
-    void sampleViewBindingActivity() {
+    public void sampleViewBindingActivity(View view) {
         Intent intent = new Intent(getActivity().getApplicationContext(), ViewBindingActivity.class);
         startActivity(intent);
     }
 
-    @OnClick(R.id.btn_sample_view_binding_bk)
-    void sampleViewBindingButterKnife() {
+    public void sampleViewBindingButterKnife(View view) {
         clickedOn(new ViewBindingBKFragment());
     }
 
-    @OnClick(R.id.btn_sample_view_binding)
-    void sampleViewBinding() {
+    public void sampleViewBinding(View view) {
         clickedOn(new ViewBindingFragment());
     }
 
-    @OnClick(R.id.btn_sample_data_binding)
-    void sampleDataBinding() {
+    public void sampleDataBinding(View view) {
         clickedOn(new DataBindingFragment());
     }
 

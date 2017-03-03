@@ -1,9 +1,10 @@
-<ScrollView
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    >
-
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="main_fragment" type="com.yeonsik.databindingsample.databindingsample.fragments.MainFragment"/>
+    </data>
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
     <LinearLayout
         android:orientation="vertical"
         android:layout_height="wrap_content"
@@ -22,6 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:text="@string/btn_sample_view_binding_bk_activity"
+            android:onClick="@{main_fragment::sampleViewBindingButterKnifeActivity}"
             />
 
         <Button
@@ -29,6 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:text="@string/btn_sample_view_binding_activity"
+            android:onClick="@{main_fragment.sampleViewBindingActivity}"
             />
 
         <Button
@@ -36,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:text="@string/btn_sample_view_binding_bk"
+            android:onClick="@{main_fragment.sampleViewBindingButterKnife}"
             />
 
         <Button
@@ -43,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:text="@string/btn_sample_view_binding"
+            android:onClick="@{main_fragment.sampleViewBinding}"
             />
 
         <Button
@@ -50,7 +55,9 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:text="@string/btn_sample_data_binding"
+            android:onClick="@{main_fragment.sampleDataBinding}"
             />
 
     </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</layout>
