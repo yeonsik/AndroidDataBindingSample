@@ -59,6 +59,14 @@
             />
 
         <Button
+            android:id="@+id/btn_sample_observable_data_binding"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/btn_sample_observable_data_binding"
+            android:onClick="@{fragment::sampleObservableDataBinding}"
+            />
+
+        <Button
             android:id="@+id/btn_sample_listener_binding"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"

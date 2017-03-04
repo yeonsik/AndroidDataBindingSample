@@ -60,6 +60,10 @@ public class MainFragment extends BaseFragment {
         clickedOn(new DataBindingFragment());
     }
 
+    public void sampleObservableDataBinding(View view) {
+        clickedOn(new ObservableDataBindingFragment());
+    }
+
     public void sampleListenerBinding(View view) {
         clickedOn(new ListenerBindingFragment());
     }
