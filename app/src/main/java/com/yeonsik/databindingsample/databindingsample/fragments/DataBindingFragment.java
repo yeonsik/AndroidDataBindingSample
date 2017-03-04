@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.yeonsik.databindingsample.databindingsample.R;
 import com.yeonsik.databindingsample.databindingsample.databinding.FragmentDataBindingBinding;
@@ -16,7 +17,8 @@ import com.yeonsik.databindingsample.databindingsample.datas.User;
 
 public class DataBindingFragment extends BaseFragment {
 
-    FragmentDataBindingBinding mBinding;
+    private FragmentDataBindingBinding mBinding;
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class DataBindingFragment extends BaseFragment {
         View layout = inflater.inflate(R.layout.fragment_data_binding, container, false);
 
         mBinding = FragmentDataBindingBinding.bind(layout);
+        mBinding.setFragment(this);
 
         User user = new User("Gildong", "Hong");
         mBinding.setUser(user);
@@ -38,5 +41,10 @@ public class DataBindingFragment extends BaseFragment {
         user.setLastName("Yoon");
 
         return layout;
+    }
+
+    public void testClick(View view) {
+        Toast.makeText(getActivity().getApplicationContext(), "testClick", Toast.LENGTH_SHORT).show();
+        mBinding.getUser().setFirstName("Kim");
     }
 }
