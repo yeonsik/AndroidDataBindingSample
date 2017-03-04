@@ -2,6 +2,15 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable name="user2" type="com.yeonsik.databindingsample.databindingsample.datas.User2"/>
+        <variable name="user3" type="com.yeonsik.databindingsample.databindingsample.datas.User3"/>
+
+        <import type="android.databinding.ObservableMap"/>
+        <variable name="user4" type="ObservableMap&lt;String, Object&gt;"/>
+
+        <import type="com.yeonsik.databindingsample.databindingsample.datas.Fields"/>
+        <import type="android.databinding.ObservableList"/>
+        <variable name="user5" type="ObservableList&lt;Object&gt;"/>
+
         <variable name="fragment" type="com.yeonsik.databindingsample.databindingsample.fragments.ObservableDataBindingFragment"/>
     </data>
     <LinearLayout
@@ -12,6 +21,13 @@
             android:layout_height="wrap_content"
             android:text="test"
             android:onClick="@{fragment.testClick}"/>
+        <!-- Observable 방식 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Observable 방식"
+            android:textStyle="bold"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -20,5 +36,65 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{user2.lastName}"/>
+        <!-- ObservableField 방식 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:text="ObservableField 방식"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user3.firstName}"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user3.lastName}"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Integer.toString(user3.age)}"/>
+        <!-- Observable컬렉션 방식, ObservableArrayMap (키가 참조 형식일 때) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:text="Observable컬렉션 방식, ObservableArrayMap"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{user4["firstName"]}'/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{user4["lastName"]}'/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{String.valueOf(1 + (Integer)user4["age"])}'/>
+        <!-- Observable컬렉션 방식, ObservableArrayList (키가 정수일 때) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:text="Observable컬렉션 방식, ObservableArrayMap"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user5[Fields.FIRST_NAME]}"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user5[Fields.LAST_NAME]}"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(1 + (Integer)user5[Fields.AGE])}"/>
     </LinearLayout>
 </layout>

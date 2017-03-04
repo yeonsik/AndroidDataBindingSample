@@ -8,6 +8,9 @@ import com.yeonsik.databindingsample.databindingsample.BR;
  * Created by yeonsik on 2017-03-04.
  */
 
+/**
+ * Observable 방식
+ */
 public class User2 extends BaseObservable {
     private String firstName;
     private String lastName;

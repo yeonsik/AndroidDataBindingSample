@@ -1,15 +1,18 @@
 package com.yeonsik.databindingsample.databindingsample.fragments;
 
+import android.databinding.ObservableArrayList;
+import android.databinding.ObservableArrayMap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.yeonsik.databindingsample.databindingsample.R;
 import com.yeonsik.databindingsample.databindingsample.databinding.FragmentObservableDataBindingBinding;
+import com.yeonsik.databindingsample.databindingsample.datas.Fields;
 import com.yeonsik.databindingsample.databindingsample.datas.User2;
+import com.yeonsik.databindingsample.databindingsample.datas.User3;
 
 /**
  * Created by yeonsik on 2017-03-04.
@@ -33,17 +36,34 @@ public class ObservableDataBindingFragment extends BaseFragment {
         mBinding = FragmentObservableDataBindingBinding.bind(layout);
         mBinding.setFragment(this);
 
-        User2 user = new User2("Gildong", "Hong");
-        mBinding.setUser2(user);
+        User2 user2 = new User2("Gildong", "Hong");
+        mBinding.setUser2(user2);
 
-        user.setFirstName("Yeonsik");
-        user.setLastName("Yoon");
+        User3 user3 = new User3();
+        user3.firstName.set("보영");
+        user3.lastName.set("박");
+        user3.age.set(25);
+        mBinding.setUser3(user3);
+
+        ObservableArrayMap<String, Object> user4 = new ObservableArrayMap<>();
+        user4.put("firstName", "초아");
+        user4.put("lastName", "박");
+        user4.put("age", 17);
+        mBinding.setUser4(user4);
+
+        ObservableArrayList<Object> user5 = new ObservableArrayList<>();
+        user5.add("이유");
+        user5.add("아");
+        user5.add(21);
+        mBinding.setUser5(user5);
 
         return layout;
     }
 
     public void testClick(View view) {
-        Toast.makeText(getActivity().getApplicationContext(), "testClick", Toast.LENGTH_SHORT).show();
-        mBinding.getUser2().setFirstName("Kim");
+        mBinding.getUser2().setLastName("Kim");
+        mBinding.getUser3().lastName.set("Kim");
+        mBinding.getUser4().put("lastName", "Kim");
+        mBinding.getUser5().set(Fields.LAST_NAME, "Kim");
     }
 }
