@@ -32,6 +32,7 @@ build/
 .idea/workspace.xml
 .idea/misc.xml
 .idea/encodings.xml
+.idea/markdown-navigator.xml
 gen-external-apklibs/
 *.iml
 *.iws
