@@ -7,3 +7,4 @@ Android DataBinding Sample
 
 * https://developer.android.com/topic/libraries/data-binding/index.html?hl=ko
 * http://realignist.me/code/2016/05/25/data-binding-guide.html
+* http://gun0912.tistory.com/71

@@ -64,6 +64,10 @@ public class MainFragment extends BaseFragment {
         clickedOn(new ListenerBindingFragment());
     }
 
+    public void sampleAdapterBinding(View view) {
+        clickedOn(new AdapterBindingFragment());
+    }
+
     private void clickedOn(@NonNull Fragment fragment) {
         final String tag = fragment.getClass().toString();
         getActivity().getSupportFragmentManager()

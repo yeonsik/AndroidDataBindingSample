@@ -1,13 +1,12 @@
 package com.yeonsik.databindingsample.databindingsample.activities;
 
 import android.app.Activity;
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import com.yeonsik.databindingsample.databindingsample.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -16,13 +15,13 @@ import butterknife.ButterKnife;
 
 public class ViewBindingBKActivity extends Activity {
 
-    @Bind(R.id.title_textview)
+    @BindView(R.id.title_textview)
     TextView titleTextView;
 
-    @Bind(R.id.description_textview)
+    @BindView(R.id.description_textview)
     TextView descriptionView;
 
-    @Bind(R.id.footer_textview)
+    @BindView(R.id.footer_textview)
     TextView footerTextView;
 
     @Override

@@ -6,4 +6,5 @@
     <string name="btn_sample_view_binding">View Binding</string>
     <string name="btn_sample_data_binding">Data Binding</string>
     <string name="btn_sample_listener_binding">Listener Binding</string>
+    <string name="btn_sample_adapter_binding">Adapter Binding</string>
 </resources>

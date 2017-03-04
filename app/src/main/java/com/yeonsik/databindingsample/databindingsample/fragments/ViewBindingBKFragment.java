@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.yeonsik.databindingsample.databindingsample.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -18,13 +18,13 @@ import butterknife.ButterKnife;
 
 public class ViewBindingBKFragment extends BaseFragment {
 
-    @Bind(R.id.title_textview)
+    @BindView(R.id.title_textview)
     TextView titleTextView;
 
-    @Bind(R.id.description_textview)
+    @BindView(R.id.description_textview)
     TextView descriptionView;
 
-    @Bind(R.id.footer_textview)
+    @BindView(R.id.footer_textview)
     TextView footerTextView;
 
     @Override
@@ -44,10 +44,5 @@ public class ViewBindingBKFragment extends BaseFragment {
         footerTextView.setText("footer");
 
         return layout;
-    }
-
-    @Override public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }

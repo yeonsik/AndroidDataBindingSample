@@ -66,6 +66,14 @@
             android:onClick="@{fragment::sampleListenerBinding}"
             />
 
+        <Button
+            android:id="@+id/btn_sample_adapter_binding"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/btn_sample_adapter_binding"
+            android:onClick="@{fragment::sampleAdapterBinding}"
+            />
+
     </LinearLayout>
     </ScrollView>
 </layout>
